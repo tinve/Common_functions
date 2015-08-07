@@ -20,7 +20,9 @@ def dummify(df):
 
     cat_df = pd.get_dummies(cat_df).astype('int')
 
-    return pd.concat([num_df, cat_df], axis = 1)
+    df = pd.concat([num_df, cat_df], axis = 1)
+
+    return df
 
 
 def factorize(df):
