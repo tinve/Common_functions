@@ -18,7 +18,7 @@ def dummify(df):
     cat_df = df.select_dtypes(include=['object'])
     num_df = df.select_dtypes(exclude=['object'])
 
-    cat_df = pd.get_dummies(cat_df)
+    cat_df = pd.get_dummies(cat_df).astype('int')
 
     return pd.concat([num_df, cat_df], axis = 1)
 
